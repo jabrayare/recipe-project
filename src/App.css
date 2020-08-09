@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.showcase {
+  background-color: #ffefef;
+  height: 70vh;
+  width: 100%;
+  margin-bottom: -250px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://goldbelly.imgix.net/uploads/card/image/257/Travel-North-East-Feature-Banner-2.jpg?ixlib=react-9.0.2&auto=format&ar=2%3A1");
+  text-align: center;
+}
+.showcase-header {
+  position: relative;
+  top: 170px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.app {
+  background-image: linear-gradient(to top, #b8b2c5 0%, #614258 100%);
+  display: flex;
+  flex-direction: column;
+  /* min-height: 50vh; */
+}
+.flip-card {
+  background-color: transparent;
+  width: 400px;
+  height: 500px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+.ingBtn {
+  padding: 5px 10px;
+  border: none;
+  background-color: #a7799a;
+  opacity: 0.7;
+  width: 175px;
+  margin: auto;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.ingBtn:hover {
+  background-color: blue;
+  cursor: pointer;
+}
+/* This container is needed to position the front and back side */
+.flip-inner-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-inner-card {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-front-card,
+.flip-back-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  margin-bottom: 20px;
+}
+
+/* Style the front side (fallback if image is missing) */
+
+/* Style the back side */
+.flip-back-card {
+  background-color: rgb(134, 139, 143);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.recipies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.recipe {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  /* margin: auto; */
+  padding: 20px;
+  box-shadow: 5px 10px 20px rgb(187, 184, 184);
+  margin-bottom: 30px;
+  background-color: #f4f4f4;
+  height: 500px;
+  /* transition: all 0.3s ease-in-out; */
+  border: none;
+}
+.formatNum {
+  color: red;
+  margin-left: 10px;
+}
+.form_data {
+  display: flex;
+  justify-content: center;
+}
+.searchInput {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 50%;
+  border: none;
+}
+.searchBtn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  border: none;
+  background-color: lightcoral;
+  color: #3a3737;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+}
+.searchBtn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.foodNotFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #333333;
+  margin: 20px;
+}
+.foodText {
+  color: #3a3737;
+  width: 80%;
+  margin: auto;
+  position: relative;
+  top: 20px;
+  left: 40px;
+  margin-bottom: 10px;
+}
+.title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.calories {
+  font-size: 1.2rem;
+  color: #a18cd1;
+  margin-bottom: 10px;
+}
+.image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  margin-bottom: -160px;
+  padding-bottom: 40px;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #3a3737;
+  color: #f4f4f4;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  opacity: 0.7;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  overflow: hidden;
+}
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+.navbar ul li {
+  padding: 0 20px;
+}
+.logo {
+  color: lightcoral;
+  font-family: "Suwannaphum", cursive;
+}
+.navbar ul li:hover,
+.logo:hover {
+  color: lightcoral;
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  /* .app {
+    display: none;
+  } */
+  ul {
+    justify-content: space-around;
+  }
+  li {
+    padding: 0 5px;
+  }
+  .recipe {
+    min-width: 300px;
+  }
+  .logo {
+    margin-bottom: 20px;
+  }
+  .navbar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
