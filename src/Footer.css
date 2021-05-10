@@ -5,12 +5,13 @@
 }
 .footer-section {
   width: 100%;
-  background-image: linear-gradient(to top, #6040b1 0%, #c2b7bf 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   padding: 10px;
   text-align: center;
 }
 .logo-footer {
   margin-top: 20px;
+  font-size: 2.3rem;
 }
 .footer {
   display: flex;

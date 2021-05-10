@@ -56,7 +56,7 @@
   color: rgb(228, 109, 109);
 }
 .contact-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6));
+  background-color: #ccc;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -102,11 +102,12 @@
 .form-btn {
   padding: 5px 20px;
   border: none;
-  background-color: lightcoral;
+  background-color: #0a66c2;
   color: #fff;
   border-radius: 5px;
-  font-size: 1.2rem;
-  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.33;
+  font-weight: 500;
 }
 .form-btn:hover {
   cursor: pointer;

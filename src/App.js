@@ -43,11 +43,12 @@ function App() {
     setSearch("");
   };
   console.log(query);
+  const recipeSource = "../images/recipe1.jpg";
   return (
     <div className="app">
       <Navbar />
       <div className="showcase">
-        <h1 className="showcase-header">Welcome to Halwa Sweet Restaurant</h1>
+        <h1 className="showcase-header">~ Welcome to Halwa Recipe Finder ~</h1>
       </div>
       <form onSubmit={generateRecipe} className="form_data">
         <input
@@ -63,6 +64,7 @@ function App() {
         {recipes.length != 0 && query.length != 0 ? (
           recipes.map((recipe) => (
             <Recipe
+              key={recipe.id}
               title={recipe.recipe.label}
               calories={recipe.recipe.calories}
               image={recipe.recipe.image}
@@ -75,6 +77,7 @@ function App() {
             <p>Please search for other foods</p>
           </div>
         )}
+        {/* <Recipe title="best food ever" calories="900" image={recipeSource} /> */}
       </div>
       <Reviews rating={5} />
       <div className="contact-section">
