@@ -8,9 +8,13 @@ import Map from "./Map";
 import Form from "./Form.js";
 import Footer from "./Footer";
 
+// import env from "react-dotenv";
+
 function App() {
-  const API_KEY = "c565ef5877659c85da57c47757ced4e5";
-  const API_ID = "29fe6d7e";
+  // const API_KEY = env.API_KEY;
+  // const API_ID = env.API_ID;
+  const { REACT_APP_API_KEY, REACT_APP_API_ID } = process.env;
+  console.log("API_KEY:::", REACT_APP_API_KEY);
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("chicken");
@@ -26,7 +30,7 @@ function App() {
 
   const getRecipe = async () => {
     await fetch(
-      `https://api.edamam.com/search?q=${query}&app_id=${API_ID}&app_key=${API_KEY}`
+      `https://api.edamam.com/search?q=${query}&app_id=${REACT_APP_API_ID}&app_key=${REACT_APP_API_KEY}`
     )
       .then((Response) => Response.json())
       .then((data) => setRecipes(data.hits))
